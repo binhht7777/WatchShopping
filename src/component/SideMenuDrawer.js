@@ -3,6 +3,7 @@
 import React, { Component } from 'react';
 import { Keyboard } from 'react-native';
 import Drawer from 'react-native-drawer';
+//import Drawer from '@react-navigation/drawer';
 
 
 // Our custom files and classes import

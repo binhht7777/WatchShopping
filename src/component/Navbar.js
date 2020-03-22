@@ -1,5 +1,6 @@
 // React native and others libraries imports
 import React, { Component } from 'react';
+import { StyleSheet } from 'react-native';
 import { Header, Body, Title, Left, Right, Icon } from 'native-base';
 
 // Our custom files and classes import
@@ -24,7 +25,7 @@ export default class Navbar extends Component {
    }
 }
 
-const styles = {
+const styles = StyleSheet.create({
    body: {
       flex: 1,
       justifyContent: 'center',
@@ -32,6 +33,8 @@ const styles = {
    },
    title: {
       //  fontFamily: 'Roboto',
-      fontWeight: '100'
+      fontSize: 20,
+      fontWeight: "500",
+      color: "white"
    }
-};
+});

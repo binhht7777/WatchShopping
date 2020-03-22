@@ -7,26 +7,32 @@ import { Actions } from 'react-native-router-flux';
 import Navbar from '../component/Navbar';
 import SideMenuDrawer from '../component/SideMenuDrawer';
 import CategoryBlock from '../component/CategoryBlock';
-import { Colors } from 'react-native/Libraries/NewAppScreen';
+import HeaderLeft from "../component/HeaderLeft";
+import HeaderRight from "../component/HeaderRight";
 
 export default class Home extends Component {
    render() {
       var left = (
-         <Left style={{ flex: 1 }}>
-            <Button onPress={() => this._sideMenuDrawer.open()} style={{ backgroundColor: '#E9446A' }}>
-               <Icon name='ios-list-box' />
-            </Button>
-         </Left>
+         // <Left style={{ flex: 1 }}>
+         //    <Button onPress={() => this._sideMenuDrawer.open()} style={{ backgroundColor: '#E9446A' }}>
+         //       <Image source={require('../../assets/Icon/Menu30.png')}></Image>
+         //       {/* <Icon name='ios-list-box' /> */}
+         //    </Button>
+         // </Left>
+         <HeaderLeft onDrawer={() => this._sideMenuDrawer.open()} />
       );
       var right = (
-         <Right style={{ flex: 1 }}>
-            <Button onPress={() => Actions.search()} style={{ backgroundColor: '#E9446A' }}>
-               <Icon name='ios-search' />
-            </Button>
-            <Button onPress={() => Actions.cart()} transparent>
-               <Icon name='ios-cart' />
-            </Button>
-         </Right>
+         // <Right style={{ flex: 1 }}>
+         //    <Button onPress={() => Actions.search()} style={{ backgroundColor: '#E9446A' }}>
+         //       <Image source={require('../../assets/Icon/Search30.png')}></Image>
+         //       {/* <Icon name='ios-search' /> */}
+         //    </Button>
+         //    <Button onPress={() => Actions.cart()} transparent>
+         //       <Image source={require('../../assets/Icon/Shoppingcart30.png')}></Image>
+         //       {/* <Icon name='ios-cart' /> */}
+         //    </Button>
+         // </Right>
+         <HeaderRight onSearch={() => Actions.search()} onCart={() => Actions.cart()} />
       );
       return (
          <SideMenuDrawer ref={(ref) => this._sideMenuDrawer = ref}>

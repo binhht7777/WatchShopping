@@ -5,9 +5,10 @@
 
 // React native and others libraries imports
 import React, { Component } from 'react';
-import { BackHandler } from 'react-native';
+import { BackHandler, Image } from 'react-native';
 import { Scene, Router, Actions } from 'react-native-router-flux';
 import { Root } from 'native-base';
+import { Container, Header, Content, Card, CardItem, Thumbnail, Text, Button, Icon, Left, Body, Right } from 'native-base';
 
 // Our custom files and classes import
 import Home from './page/Home';
@@ -24,6 +25,7 @@ import Login from './page/Login';
 import Signup from './page/Signup';
 import Checkout from './page/Checkout';
 
+import MyTabNavigation from "./component/MyTabNavigation";
 
 export default class Main extends Component {
    UNSAFE_componentWillMount = () => {
@@ -32,26 +34,26 @@ export default class Main extends Component {
 
    render() {
       return (
-
-         <Root>
-            <Router>
-               <Scene key="root">
-                  <Scene initial key="home" component={Home} hideNavBar />
-                  <Scene key="search" component={Search} modal hideNavBar />
-                  <Scene key="cart" component={Cart} modal hideNavBar />
-                  <Scene key="wishlist" component={WishList} modal hideNavBar />
-                  <Scene key="map" component={Map} modal hideNavBar />
-                  <Scene key="contact" component={Contact} modal hideNavBar />
-                  <Scene key="newsletter" component={Newsletter} modal hideNavBar />
-                  <Scene key="category" component={Category} hideNavBar />
-                  <Scene key="product" component={Product} hideNavBar />
-                  <Scene key="imageGallery" component={ImageGallery} modal hideNavBar />
-                  <Scene key="login" component={Login} hideNavBar />
-                  <Scene key="signup" component={Signup} hideNavBar />
-                  <Scene key="checkout" component={Checkout} hideNavBar />
-               </Scene>
-            </Router>
-         </Root>
+         <MyTabNavigation />
+         // <Root>
+         //    <Router>
+         //       <Scene key="root">
+         //          <Scene initial key="home" component={Home} hideNavBar />
+         //          <Scene key="search" component={Search} modal hideNavBar />
+         //          <Scene key="cart" component={Cart} modal hideNavBar />
+         //          <Scene key="wishlist" component={WishList} modal hideNavBar />
+         //          <Scene key="map" component={Map} modal hideNavBar />
+         //          <Scene key="contact" component={Contact} modal hideNavBar />
+         //          <Scene key="newsletter" component={Newsletter} modal hideNavBar />
+         //          <Scene key="category" component={Category} hideNavBar />
+         //          <Scene key="product" component={Product} hideNavBar />
+         //          <Scene key="imageGallery" component={ImageGallery} modal hideNavBar />
+         //          <Scene key="login" component={Login} hideNavBar />
+         //          <Scene key="signup" component={Signup} hideNavBar />
+         //          <Scene key="checkout" component={Checkout} hideNavBar />
+         //       </Scene>
+         //    </Router>
+         // </Root>
       );
    }
 
